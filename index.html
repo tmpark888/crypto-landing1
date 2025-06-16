@@ -130,6 +130,8 @@
             font-size: 24px;
             font-weight: bold;
             margin: 15px 0;
+            color: #fff;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
         }
         
         .cta-button {
@@ -246,7 +248,7 @@
         <div class="urgency-block">
             <h3>⏰ ОКНО ВОЗМОЖНОСТЕЙ ЗАКРЫВАЕТСЯ</h3>
             <p>Александр согласился раскрыть систему только 300 людям</p>
-            <div class="countdown">Осталось: 72 часа</div>
+            <div class="countdown" id="countdown">Осталось: 71ч 45м 30с</div>
             <p><strong>После этого — доступ закроют навсегда</strong></p>
         </div>
         
@@ -283,12 +285,42 @@
 
     <script>
         function openTelegram() {
-            // Замените на реальную ссылку на ваш Telegram-бот
-            window.open('https://t.me/your_crypto_bot', '_blank');
+            window.open('https://t.me/ABTOKRIPTA_bot', '_blank');
+        }
+        
+        // Функция обратного отсчета
+        function startCountdown() {
+            // Устанавливаем время окончания на 72 часа от текущего момента
+            const endTime = new Date().getTime() + (72 * 60 * 60 * 1000);
+            
+            const countdownElement = document.getElementById('countdown');
+            
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const timeLeft = endTime - now;
+                
+                if (timeLeft > 0) {
+                    const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+                    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+                    
+                    countdownElement.textContent = `Осталось: ${hours}ч ${minutes}м ${seconds}с`;
+                } else {
+                    // Если время истекло, перезапускаем счетчик
+                    startCountdown();
+                }
+            }
+            
+            // Запускаем обновление каждую секунду
+            const interval = setInterval(updateCountdown, 1000);
+            updateCountdown(); // Обновляем сразу
         }
         
         // Добавляем интерактивности
         document.addEventListener('DOMContentLoaded', function() {
+            // Запускаем обратный отсчет
+            startCountdown();
+            
             // Эффект мерцания для элементов
             const highlights = document.querySelectorAll('.highlight');
             highlights.forEach((highlight, index) => {
@@ -296,25 +328,6 @@
                     highlight.style.animation = 'pulse 2s infinite';
                 }, index * 500);
             });
-            
-            // Обратный отсчет (фейковый, но работающий)
-            let hours = 71;
-            let minutes = 45;
-            
-            setInterval(() => {
-                minutes--;
-                if (minutes < 0) {
-                    hours--;
-                    minutes = 59;
-                }
-                if (hours < 0) {
-                    hours = 71;
-                    minutes = 59;
-                }
-                
-                document.querySelector('.countdown').textContent = 
-                    `Осталось: ${hours}ч ${minutes}м`;
-            }, 60000); // Обновляем каждую минуту
         });
     </script>
 </body>

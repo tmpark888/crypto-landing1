@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>От 25к рублей до $2M за 2 недели отпуска</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: #fff;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .warning-badge {
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .main-headline {
+            font-size: clamp(28px, 5vw, 48px);
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .highlight {
+            background: linear-gradient(45deg, #00ff88, #00ccff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subheadline {
+            font-size: clamp(18px, 3vw, 24px);
+            color: #cccccc;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+        
+        .story-block {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            backdrop-filter: blur(10px);
+        }
+        
+        .story-text {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .proof-list {
+            text-align: left;
+            margin: 20px 0;
+        }
+        
+        .proof-item {
+            font-size: 16px;
+            margin: 10px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .proof-item:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #00ff88;
+            font-weight: bold;
+        }
+        
+        .urgency-block {
+            background: linear-gradient(45deg, #ff1744, #d50000);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .urgency-block:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shimmer 3s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .countdown {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .cta-button {
+            background: linear-gradient(45deg, #00ff88, #00ccff);
+            color: #000;
+            border: none;
+            padding: 20px 40px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+            margin: 20px 0;
+            display: inline-block;
+            text-decoration: none;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 255, 136, 0.5);
+        }
+        
+        .disclaimer {
+            font-size: 12px;
+            color: #888;
+            margin-top: 20px;
+            line-height: 1.4;
+        }
+        
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .floating-crypto {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        .mobile-optimized {
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .story-block {
+                padding: 20px;
+            }
+            
+            .cta-button {
+                width: 100%;
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-elements">
+        <div class="floating-crypto" style="top: 10%; left: 10%; font-size: 30px;">₿</div>
+        <div class="floating-crypto" style="top: 20%; right: 15%; font-size: 25px;">Ξ</div>
+        <div class="floating-crypto" style="top: 60%; left: 20%; font-size: 35px;">₿</div>
+        <div class="floating-crypto" style="bottom: 20%; right: 10%; font-size: 28px;">Ξ</div>
+    </div>
+
+    <div class="container">
+        <div class="warning-badge">⚠️ ТОЛЬКО 72 ЧАСА</div>
+        
+        <h1 class="main-headline">
+            Мой друг с зарплатой <span class="highlight">25 тысяч</span><br>
+            стал миллионером за <span class="highlight">2 недели отпуска</span>
+        </h1>
+        
+        <p class="subheadline">
+            Пока лежал на пляже, его крипто-система заработала <strong>$2.000.000</strong><br>
+            Теперь он показал мне ВСЕ свои секреты...
+        </p>
+        
+        <div class="story-block">
+            <p class="story-text">
+                <strong>Александр</strong> — обычный парень из провинции. Зарплата 25к, ипотека на 25 лет, двое детей.
+            </p>
+            <p class="story-text">
+                Уехал в отпуск на 2 недели обычным "работягой".<br>
+                Вернулся <strong>долларовым миллионером</strong>.
+            </p>
+            <div class="proof-list">
+                <div class="proof-item">Range Rover за 8 миллионов — купил не торгуясь</div>
+                <div class="proof-item">Porsche за 12 миллионов — просто потому что "красивая"</div>
+                <div class="proof-item">20 квартир подряд — весь город обсуждал</div>
+                <div class="proof-item">Вилла в Испании за €1.5M — к концу года</div>
+            </div>
+            <p class="story-text">
+                <strong>Весь секрет — в автоматической системе</strong>, которая работает даже когда вы спите.
+            </p>
+        </div>
+        
+        <div class="urgency-block">
+            <h3>⏰ ОКНО ВОЗМОЖНОСТЕЙ ЗАКРЫВАЕТСЯ</h3>
+            <p>Александр согласился раскрыть систему только 300 людям</p>
+            <div class="countdown">Осталось: 72 часа</div>
+            <p><strong>После этого — доступ закроют навсегда</strong></p>
+        </div>
+        
+        <a href="#" class="cta-button" onclick="openTelegram()">
+            💎 ПОЛУЧИТЬ СИСТЕМУ СЕЙЧАС
+        </a>
+        
+        <p style="font-size: 14px; color: #ccc; margin: 15px 0;">
+            👇 Переход в закрытый Telegram-бот<br>
+            <strong>Бесплатно. Без спама. Только проверенная информация.</strong>
+        </p>
+        
+        <div class="story-block">
+            <p class="story-text">
+                <strong>"Алексей, я покажу тебе всю систему,"</strong> — сказал Александр, — 
+                <strong>"но взамен расскажи людям правду. Хочу, чтобы это прекратилось — 
+                весь этот беспредел в интернете про крипту."</strong>
+            </p>
+            <p class="story-text">
+                Консультацию у Александра купить нельзя — он мультимиллионер и вообще не светится.<br>
+                Но систему он согласился раскрыть. Один раз. И только сейчас.
+            </p>
+        </div>
+        
+        <a href="#" class="cta-button" onclick="openTelegram()">
+            🚀 ХОЧУ УЗНАТЬ СИСТЕМУ
+        </a>
+        
+        <p class="disclaimer">
+            Результаты индивидуальны. Торговля криптовалютами связана с рисками. 
+            Инвестируйте только те средства, потерю которых можете себе позволить.
+        </p>
+    </div>
+
+    <script>
+        function openTelegram() {
+            // Замените на реальную ссылку на ваш Telegram-бот
+            window.open('https://t.me/ABTOKRIPTA_bot', '_blank');
+        }
+        
+        // Добавляем интерактивности
+        document.addEventListener('DOMContentLoaded', function() {
+            // Эффект мерцания для элементов
+            const highlights = document.querySelectorAll('.highlight');
+            highlights.forEach((highlight, index) => {
+                setTimeout(() => {
+                    highlight.style.animation = 'pulse 2s infinite';
+                }, index * 500);
+            });
+            
+            // Обратный отсчет (фейковый, но работающий)
+            let hours = 71;
+            let minutes = 45;
+            
+            setInterval(() => {
+                minutes--;
+                if (minutes < 0) {
+                    hours--;
+                    minutes = 59;
+                }
+                if (hours < 0) {
+                    hours = 71;
+                    minutes = 59;
+                }
+                
+                document.querySelector('.countdown').textContent = 
+                    `Осталось: ${hours}ч ${minutes}м`;
+            }, 60000); // Обновляем каждую минуту
+        });
+    </script>
+</body>
+</html>
